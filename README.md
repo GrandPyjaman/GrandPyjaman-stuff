@@ -1,16 +1,6 @@
-# hello-world
+# Create the Windows GOD MODE file on the user desktop
 
-Je décale même le texte !
-J'essaie d'apprendre comment ce système fonctionne bordel
+The title is explicit.
+Works on windows 10, not tested on 11
 
-# Des essais sur les branches et l'édition de readme
-Je fais ce que je peux
-```
-{
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
-}
-```
-
-15ème ligne
+This script is plug and play
