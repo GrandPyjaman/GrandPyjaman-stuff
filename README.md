@@ -1,4 +1,5 @@
 # GrandPyjaman's repo of stuff and things
 
-The title is explicit.
-I put here stuff i create to build a portfolio
+Le titre est explicite
+
+Je me ici des choses que je fais dans le but que ça serve aussi de portfolio
