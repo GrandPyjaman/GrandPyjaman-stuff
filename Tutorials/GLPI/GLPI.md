@@ -92,7 +92,7 @@ Télécharger la dernière version de l'agent à https://github.com/glpi-project
 Le fichier d'installation Windows est un .msi
 Exécutez le 
 
-Accédez à l'interface web de l'agent en tapant ``127.0.0.1:62354`` dans votre navigateur. Vous devriez tomber sur cette page : ![[Pasted image 20240911121826.png]]
+Accédez à l'interface web de l'agent en tapant ``127.0.0.1:62354`` dans votre navigateur. Vous devriez tomber sur cette page : ![[https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/gpli-agent_web_interface.png]]
 Le bouton "Force an Inventory" forcera la remonter des informations de l'agent vers le server
 Si le serveur est configuré correctement, le bouton "server0" vous redirigera vers l'interface web du serveur GLPI
 ## Sur Linux
