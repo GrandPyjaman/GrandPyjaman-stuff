@@ -77,7 +77,7 @@ Lors de la configuration de la connexion à la base de donnée, entrez les coord
 
 Dans l'écran d'après, choisissez la base de données que nous avons construit plus tôt (glpi_DB) et continuez
 
-Vous devrez recevoir un message « OK - La base a bien été initialisée », continuez jusqu'à la fin de l'installation et sélectionnez « Utilisez GLPI »
+Vous devrez recevoir un message "OK - La base a bien été initialisée", continuez jusqu'à la fin de l'installation et sélectionnez "Utilisez GLPI"
 
 Enfin, connectez vous au compte pertinent pour vous et vous serez sur l'interface de GLPI
 
@@ -85,14 +85,14 @@ Une fois sur l'interface web, si vous souhaitez utiliser l'inventorisation, pens
 - "Administration" sur le bandeau de gauche
 - "Inventaire"
 - Et cochez "Activer l'inventaire"
-![[Pasted image 20240911134339.png]]
+![Activation de l'inventaire](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Activation_inventaire_glpi.png)
 # Installation de l'agent
 ## Sur Windows
 Télécharger la dernière version de l'agent à https://github.com/glpi-project/glpi-agent/releases
 Le fichier d'installation Windows est un .msi
 Exécutez le 
 
-Accédez à l'interface web de l'agent en tapant ``127.0.0.1:62354`` dans votre navigateur. Vous devriez tomber sur cette page : ![[https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/gpli-agent_web_interface.png]]
+Accédez à l'interface web de l'agent en tapant ``127.0.0.1:62354`` dans votre navigateur. Vous devriez tomber sur cette page : ![Interface web de glpi-agent](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/gpli-agent_web_interface.png)
 Le bouton "Force an Inventory" forcera la remonter des informations de l'agent vers le server
 Si le serveur est configuré correctement, le bouton "server0" vous redirigera vers l'interface web du serveur GLPI
 ## Sur Linux
