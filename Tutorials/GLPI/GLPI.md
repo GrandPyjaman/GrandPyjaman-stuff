@@ -85,11 +85,11 @@ Enfin, quittez mysql avec `exit;`
 ### Téléchargement et décompression de l'archive GLPI
 L'archive est disponible sur le github de glpi-project
 
-`wget https://github.com/glpi-project/glpi/releases/download/10.0.16/glpi-10.0.16.tgz`
+`wget https://github.com/glpi-project/glpi/releases/download/10.0.9/glpi-10.0.9.tgz`
 
 Décompressez l'archive
 
-`tar xvf glpi-10.0.16.tgz`
+`tar xvf glpi-10.0.9.tgz`
 
 (vous remarquerez alors le dossier « glpi » là où vous l'avez décompressé)
 
