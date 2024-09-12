@@ -133,12 +133,22 @@ Une fois sur l'interface web, si vous souhaitez utiliser l'inventorisation, pens
 - "Inventaire"
 - Cochez "Activer l'inventaire"
 - Tout en bas de la page, cliquez bien sur "sauvegarder"
-![Activation de l'inventaire](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/Pictures/GLPI/Activation_inventaire_glpi.png)
+![Activation de l'inventaire](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/Activation_inventaire_glpi.png)
 # Installation de l'agent GLPI
 ## Sur Windows
 Télécharger la dernière version de l'agent à https://github.com/glpi-project/glpi-agent/releases
 Le fichier d'installation Windows est un .msi
-Exécutez le 
+### Version graphique
+- Exécutez le fichier d'installation, suivez les étapes et acceptez la licence d'utilisation
+- Choisissez où installer l'agent
+- Choisissez le type d'installation (dans le cadre de cet exercice, nous nous contenterons d'utilisez l'installation typique, n'hésitez pas à choisie "complete" ou "custom" selon votre besoin)
+- Choisissez votre cible (distante ou locale. Ici le serveur GLPI est distant et l'hôte Windows est un client) et renseignez l'adresse en rajoutant bien "/glpi" en suffixe
+![Cibles de l'agent Windows GLPI](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/glpi_agent_targets.png)
+- Si vous souhaitez renseigner des certificats, proxies, mode d'éxecution ou d'autres options, décochez "quick installation". (Ce tutoriel ce voulant simple, je ne couvrirait pas cette partie ici)
+- Puis cliquez sur "Install"
+
+Vous pourrez toujours changer la configuration de l'agent en relançant le fichier .msi et en sélectionnant "change"
+![changement de la configuration de l'agent](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/glpi_agent_change.png)
 
 Accédez à l'interface web de l'agent en tapant `127.0.0.1:62354` dans un navigateur web. Vous devriez tomber sur cette page : ![Interface web de glpi-agent](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/gpli-agent_web_interface.png)
 Le bouton "Force an Inventory" forcera la remonter des informations de l'agent vers le server
