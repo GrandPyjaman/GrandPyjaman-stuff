@@ -38,6 +38,13 @@ Nous allons ensuite sécuriser la base de données avec
 
 `mysql_secure_installation`
 
+Vous pouvez suivre les conseils lors de l'installation, par exemple 
+
+`You already have your root account protected, so you can safely answer 'n'.
+Switch to unix_socket authentication [Y/n]`
+
+Vous pouvez mettre "n" si vous avez déjà un accès root protégé
+
 Par sécurité, désactivez l'accès root à distance ainsi que l'utilisateur anonyme et la base de donnée test.
 Acceptez le rechargement des privilèges.
 
