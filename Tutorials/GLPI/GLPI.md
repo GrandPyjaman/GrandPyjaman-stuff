@@ -1,5 +1,5 @@
 # Installation du serveur sur un LAMP
-Commencez par `apt update et sudo apt upgrade -y` pour s'assurer que la machine soit à jour.
+Commencez par `apt update && sudo apt upgrade -y` pour s'assurer que la machine soit à jour.
 Pour installer le service GLPI, nous allons d'abord devoir installer quelques dépendances :
 - Apache2
 - PHP
@@ -9,6 +9,7 @@ Pour installer le service GLPI, nous allons d'abord devoir installer quelques d�
 **Apache2**
 
 `apt install apache2 `
+---
 
 **PHP 8.2** (La version maximum compatible avec GLPI version 10.0.X)
 
@@ -30,6 +31,7 @@ redémarrez ensuite le serveur apache
 
 `sudo systemctl restart apache2`
 
+---
 **MariaDB**
 
 `apt install mariadb-server`
@@ -41,6 +43,7 @@ Nous allons ensuite sécuriser la base de données avec
 Vous pouvez suivre les conseils lors de l'installation, par exemple 
 
 `You already have your root account protected, so you can safely answer 'n'.
+
 Switch to unix_socket authentication [Y/n]`
 
 Vous pouvez mettre "n" si vous avez déjà un accès root protégé
@@ -48,6 +51,7 @@ Vous pouvez mettre "n" si vous avez déjà un accès root protégé
 Par sécurité, désactivez l'accès root à distance ainsi que l'utilisateur anonyme et la base de donnée test.
 Acceptez le rechargement des privilèges.
 
+---
 
 Pensez à refaire update et upgrade à cet instant pour s'assurer de la mise à jour des dépendances et prévenir des problèmes de compatibilité et d'interaction.
 
@@ -72,18 +76,20 @@ Ensuite créez un utilisateur et augmentez les droits de l'utilisateur
 `grant all privileges on glpi_db.* to 'glpi_user'@'localhost' with grant option;`
 
 `flush privileges;`
+
 Cette dernière ligne vas mettre à jour les modifications apportées
-Enfin, quittez mysql avec `exit`
+Enfin, quittez mysql avec `exit;`
 
 ## Installation du serveur GLPI
 ### Téléchargement et décompression de l'archive GLPI
 L'archive est disponible sur le github de glpi-project
 
-`wget https://github.com/glpi-project/glpi/releases/download/10.0.9/glpi-10.0.9.tgz`
+`wget https://github.com/glpi-project/glpi/releases/download/10.0.16/glpi-10.0.16.tgz`
 
 Décompressez l'archive
 
-`tar xvf glpi-10.0.9.tgz`
+`tar xvf glpi-10.0.16.tgz`
+
 (vous remarquerez alors le dossier « glpi » là où vous l'avez décompressé)
 
 Déplacez le dossier glpi dans "/var/www/html/glpi" dans l'arborescence du serveur web apache2
@@ -97,7 +103,8 @@ Commencez par donner à l'administrateur d'apache la propriété sur le dossier 
 `chmod -R 755 /var/www/html/glpi/`
 
 Et redémarrez le serveur apache2
-``systemctl restart apache2
+
+`systemctl restart apache2`
 
 Pour accéder à l'interface web, entrez dans votre navigateur http://ip-du-serveur/glpi
 Choisissez la langue et cliquez sur "ok"
