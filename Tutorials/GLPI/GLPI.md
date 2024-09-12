@@ -6,13 +6,11 @@ Pour installer le service GLPI, nous allons d'abord devoir installer quelques d�
 - MariaDB pour mysql
 
 ## Installation des dépendances
-**Apache2**
+### Apache2
 
 `apt install apache2 `
 
----
-
-**PHP 8.2** (La version maximum compatible avec GLPI version 10.0.X)
+### PHP 8.2 (La version maximum compatible avec GLPI version 10.0.X)
 
 `apt install ca-certificates apt-transport-https software-properties-common wget curl lsb-release -y`
 
@@ -32,8 +30,7 @@ redémarrez ensuite le serveur apache
 
 `sudo systemctl restart apache2`
 
----
-**MariaDB**
+### MariaDB
 
 `apt install mariadb-server`
 
@@ -109,15 +106,22 @@ Et redémarrez le serveur apache2
 
 Pour accéder à l'interface web, entrez dans votre navigateur http://ip-du-serveur/glpi
 Choisissez la langue et cliquez sur "ok"
+![Choix de la langue](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_langue.png)
 Continuez après la licence et sélectionnez "installer"
-Dans l'écran suivant, vérifiez bien que tout les éléments requis sont installés et cliquez sur "continuer" si c'est le cas
+![Installation](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_installation.png)
+Dans l'écran suivant, vérifiez bien que tout les éléments requis sont installés et cliquez sur "continuer" si c'est le cas. En cas de problèmes, vous pouvez installer les dépendances sur le serveur et cliquer sur "réesayer"
+![Activation de l'inventaire](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_test.png)
 Lors de la configuration de la connexion à la base de donnée, entrez les coordonnées du serveur SQL, de l'utilisateur SQL et le mot de passe qui lui est associé (ici localhost, glpi_user et glpi_user_password)
-
+![Configuration BD](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_configuration_bd.png)
 Dans l'écran d'après, choisissez la base de données que nous avons construit plus tôt (glpi_DB) et continuez
-
-Vous devrez recevoir un message "OK - La base a bien été initialisée", continuez jusqu'à la fin de l'installation et sélectionnez "Utilisez GLPI"
-
-Enfin, connectez vous au compte pertinent pour vous et vous serez sur l'interface de GLPI
+![selection bd](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_connexion_bd.png)
+Après l'initialisation, vous devrez recevoir un message "OK - La base a bien été initialisée", continuez jusqu'à la fin de l'installation et sélectionnez "Utilisez GLPI"
+![initialisation](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_initialisation_db.png)
+![valide](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_connexion_valid%C3%A9e.png)
+Vous verrez ensuite les identifiants par défauts des comptes de bases
+![comptes](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_comptes.png)
+Enfin, connectez vous au compte pertinent pour vous et vous serez sur l'interface de GLPI (ici avec le compte administrateur)
+![interface](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/glpi_interface.png)
 
 Une fois sur l'interface web, si vous souhaitez utiliser l'inventorisation, pensez bien à l'activer :
 - "Administration" sur le bandeau de gauche
