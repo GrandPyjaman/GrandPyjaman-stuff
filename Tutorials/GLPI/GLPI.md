@@ -48,6 +48,7 @@ Vous pouvez mettre "n" si vous avez déjà un accès root protégé
 Par sécurité, désactivez l'accès root à distance ainsi que l'utilisateur anonyme et la base de donnée test.
 Acceptez le rechargement des privilèges.
 
+
 Pensez à refaire update et upgrade à cet instant pour s'assurer de la mise à jour des dépendances et prévenir des problèmes de compatibilité et d'interaction.
 
 
