@@ -126,7 +126,8 @@ Enfin, connectez vous au compte pertinent pour vous et vous serez sur l'interfac
 Une fois sur l'interface web, si vous souhaitez utiliser l'inventorisation, pensez bien à l'activer :
 - "Administration" sur le bandeau de gauche
 - "Inventaire"
-- Et cochez "Activer l'inventaire"
+- Cochez "Activer l'inventaire"
+- Tout en bas de la page, cliquez bien sur "sauvegarder"
 ![Activation de l'inventaire](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Activation_inventaire_glpi.png)
 # Installation de l'agent GLPI
 ## Sur Windows
@@ -148,10 +149,13 @@ Puis lancez l'installation avec perl
 `perl glpi-agent-1.7-linux-installer.pl`
 
 Lors de l'installation, le programme vous demande de renseigner l'adresse de votre server glpi (rajoutez bien "/glpi" à la fin de l'adresse)
+
+Vous n'avez pas à fournir de chemin vers l'inventaire local ou le tag s'il n'y en a pas.
+
 Puis redémarrez le service de l'agent
 
 `systemctl restart glpi-agent.service`
 
 Au besoin, vous pouvez éditer l'adresse dans le fichier de configuration se trouvant à `/etc/glpi-agent/conf.d/00-install.cfg`
 
-Pour forcer l'inventorisation vous pouvez lancer l'agent en tant que commande `glpi-agent`
+Pour forcer l'inventorisation vous pouvez lancer l'agent en tant que commande : `glpi-agent`
