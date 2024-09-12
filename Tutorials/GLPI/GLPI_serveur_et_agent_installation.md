@@ -143,6 +143,7 @@ Le fichier d'installation Windows est un .msi
 - Choisissez où installer l'agent
 - Choisissez le type d'installation (dans le cadre de cet exercice, nous nous contenterons d'utilisez l'installation typique, n'hésitez pas à choisie "complete" ou "custom" selon votre besoin)
 - Choisissez votre cible (distante ou locale. Ici le serveur GLPI est distant et l'hôte Windows est un client) et renseignez l'adresse en rajoutant bien "/glpi" en suffixe
+
 ![Cibles de l'agent Windows GLPI](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/glpi_agent_targets.png)
 - Si vous souhaitez renseigner des certificats, proxies, mode d'éxecution ou d'autres options, décochez "quick installation". (Ce tutoriel ce voulant simple, je ne couvrirait pas cette partie ici)
 - Puis cliquez sur "Install"
