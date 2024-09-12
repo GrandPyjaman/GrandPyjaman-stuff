@@ -103,7 +103,7 @@ Commencez par donner à l'administrateur d'apache la propriété sur le dossier 
 Et redémarrez le serveur apache2
 
 `systemctl restart apache2`
-
+### Fin de l'installation et interface web de GLPI
 Pour accéder à l'interface web, entrez dans votre navigateur http://ip-du-serveur/glpi
 Choisissez la langue et cliquez sur "ok"
 ![Choix de la langue](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_langue.png)
@@ -128,7 +128,7 @@ Une fois sur l'interface web, si vous souhaitez utiliser l'inventorisation, pens
 - "Inventaire"
 - Et cochez "Activer l'inventaire"
 ![Activation de l'inventaire](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Activation_inventaire_glpi.png)
-# Installation de l'agent
+# Installation de l'agent GLPI
 ## Sur Windows
 Télécharger la dernière version de l'agent à https://github.com/glpi-project/glpi-agent/releases
 Le fichier d'installation Windows est un .msi
