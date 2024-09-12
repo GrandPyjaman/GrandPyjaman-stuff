@@ -68,7 +68,7 @@ Le mot de passe demandé sera celui que vous avez entrés lors de la sécurisati
 
 Créez ensuite la base de donnée
 
-`create database glpi_DB;`
+`create database glpi_db;`
 
 Ensuite créez un utilisateur et augmentez les droits de l'utilisateur
 
