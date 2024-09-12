@@ -111,36 +111,36 @@ Et redémarrez le serveur apache2
 ### Fin de l'installation et interface web de GLPI
 Pour accéder à l'interface web, entrez dans votre navigateur http://ip-du-serveur/glpi
 Choisissez la langue et cliquez sur "ok"
-![Choix de la langue](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_langue.png)
+![Choix de la langue](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/1glpi_setup_langue.png)
 Continuez après la licence et sélectionnez "installer"
-![Installation](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_installation.png)
+![Installation](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/1glpi_setup_installation.png)
 Dans l'écran suivant, vérifiez bien que tout les éléments requis sont installés et cliquez sur "continuer" si c'est le cas. En cas de problèmes, vous pouvez installer les dépendances sur le serveur et cliquer sur "réesayer"
-![Activation de l'inventaire](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_test.png)
+![Activation de l'inventaire](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/1glpi_setup_test.png)
 Lors de la configuration de la connexion à la base de donnée, entrez les coordonnées du serveur SQL, de l'utilisateur SQL et le mot de passe qui lui est associé (ici localhost, glpi_user et glpi_user_password)
-![Configuration BD](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_configuration_bd.png)
+![Configuration BD](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/1glpi_setup_configuration_bd.png)
 Dans l'écran d'après, choisissez la base de données que nous avons construit plus tôt (glpi_DB) et continuez
-![selection bd](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_connexion_bd.png)
+![selection bd](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/1glpi_setup_connexion_bd.png)
 Après l'initialisation, vous devrez recevoir un message "OK - La base a bien été initialisée", continuez jusqu'à la fin de l'installation et sélectionnez "Utilisez GLPI"
-![initialisation](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_initialisation_db.png)
-![valide](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_connexion_valid%C3%A9e.png)
+![initialisation](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/1glpi_setup_initialisation_db.png)
+![valide](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/1glpi_setup_connexion_valid%C3%A9e.png)
 Vous verrez ensuite les identifiants par défauts des comptes de bases
-![comptes](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/1glpi_setup_comptes.png)
+![comptes](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/1glpi_setup_comptes.png)
 Enfin, connectez vous au compte pertinent pour vous et vous serez sur l'interface de GLPI (ici avec le compte administrateur)
-![interface](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/glpi_interface.png)
+![interface](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/glpi_interface.png)
 
 Une fois sur l'interface web, si vous souhaitez utiliser l'inventorisation, pensez bien à l'activer :
 - "Administration" sur le bandeau de gauche
 - "Inventaire"
 - Cochez "Activer l'inventaire"
 - Tout en bas de la page, cliquez bien sur "sauvegarder"
-![Activation de l'inventaire](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Activation_inventaire_glpi.png)
+![Activation de l'inventaire](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/Pictures/GLPI/Activation_inventaire_glpi.png)
 # Installation de l'agent GLPI
 ## Sur Windows
 Télécharger la dernière version de l'agent à https://github.com/glpi-project/glpi-agent/releases
 Le fichier d'installation Windows est un .msi
 Exécutez le 
 
-Accédez à l'interface web de l'agent en tapant `127.0.0.1:62354` dans un navigateur web. Vous devriez tomber sur cette page : ![Interface web de glpi-agent](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/gpli-agent_web_interface.png)
+Accédez à l'interface web de l'agent en tapant `127.0.0.1:62354` dans un navigateur web. Vous devriez tomber sur cette page : ![Interface web de glpi-agent](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/gpli-agent_web_interface.png)
 Le bouton "Force an Inventory" forcera la remonter des informations de l'agent vers le server
 Si le serveur est configuré correctement, le bouton "server0" vous redirigera vers l'interface web du serveur GLPI
 
