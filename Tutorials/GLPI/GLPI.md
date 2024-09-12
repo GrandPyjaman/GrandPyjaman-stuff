@@ -1,3 +1,5 @@
+Cette procédure ce fait sur une VM Debian 12.5, pensez à adapter les commandes en fonction de la distribution que vous utilisez. Utilisez les droits sudo lorsque cela est nécéssaire.
+
 # Installation du serveur sur un LAMP
 Commencez par `apt update && sudo apt upgrade -y` pour s'assurer que la machine soit à jour.
 Pour installer le service GLPI, nous allons d'abord devoir installer quelques dépendances :
@@ -8,9 +10,10 @@ Pour installer le service GLPI, nous allons d'abord devoir installer quelques d�
 ## Installation des dépendances
 ### Apache2
 
-`apt install apache2 `
+`apt install apache2 -y`
 
-### PHP 8.2 (La version maximum compatible avec GLPI version 10.0.X)
+### PHP
+Importation des certificats
 
 `apt install ca-certificates apt-transport-https software-properties-common wget curl lsb-release -y`
 
@@ -18,31 +21,33 @@ Importation de la clé et du référentiel GPG
 
 `curl -sSL https://packages.sury.org/php/README.txt | bash -x`
 
-PHP 8.2 en module Apache
+Installation de PHP
 
-`apt install php8.2 libapache2-mod-php8.2`
+`apt install php -y`
 
-Les modules PHP suivant sont aussi nécessaire au fonctionnement de glpi
+Les modules PHP suivant sont aussi nécessaire au fonctionnement de glpi. Vous pouvez voir la liste des modules ici : https://glpi-install.readthedocs.io/en/latest/prerequisites.html#mandatory-extensions
 
-`apt install php8.2-curl php8.2-gd php8.2-mbstring php8.2-zip php8.2-xml php8.2-ldap php8.2-intl php8.2-mysql php8.2-dom php8.2-simplexml php-json php8.2-phpdbg php8.2-cgi`
+`apt install php-mysqli php-dom php-curl php-gd php-intl -y`
+
+Certains modules auront déjà été installés avec PHP directement, vous pouvez voir la liste des modules installés avec : `php -m`
 
 redémarrez ensuite le serveur apache
 
-`sudo systemctl restart apache2`
+`systemctl restart apache2`
 
 ### MariaDB
 
-`apt install mariadb-server`
+`apt install mariadb-server -y`
 
 Nous allons ensuite sécuriser la base de données avec
 
 `mysql_secure_installation`
 
-Vous pouvez suivre les conseils lors de l'installation, par exemple 
+Vous pouvez suivre les conseils lors de l'installation, par exemple :
 
-`You already have your root account protected, so you can safely answer 'n'.
+`You already have your root account protected, so you can safely answer 'n'.`
 
-Switch to unix_socket authentication [Y/n]`
+`Switch to unix_socket authentication [Y/n]`
 
 Vous pouvez mettre "n" si vous avez déjà un accès root protégé
 
@@ -82,11 +87,11 @@ Enfin, quittez mysql avec `exit;`
 ### Téléchargement et décompression de l'archive GLPI
 L'archive est disponible sur le github de glpi-project
 
-`wget https://github.com/glpi-project/glpi/releases/download/10.0.9/glpi-10.0.9.tgz`
+`wget https://github.com/glpi-project/glpi/releases/download/10.0.16/glpi-10.0.16.tgz`
 
 Décompressez l'archive
 
-`tar xvf glpi-10.0.9.tgz`
+`tar xvf glpi-10.0.16.tgz`
 
 (vous remarquerez alors le dossier « glpi » là où vous l'avez décompressé)
 
@@ -135,7 +140,7 @@ Télécharger la dernière version de l'agent à https://github.com/glpi-project
 Le fichier d'installation Windows est un .msi
 Exécutez le 
 
-Accédez à l'interface web de l'agent en tapant `127.0.0.1:62354` dans votre navigateur. Vous devriez tomber sur cette page : ![Interface web de glpi-agent](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/gpli-agent_web_interface.png)
+Accédez à l'interface web de l'agent en tapant `127.0.0.1:62354` dans un navigateur web. Vous devriez tomber sur cette page : ![Interface web de glpi-agent](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/gpli-agent_web_interface.png)
 Le bouton "Force an Inventory" forcera la remonter des informations de l'agent vers le server
 Si le serveur est configuré correctement, le bouton "server0" vous redirigera vers l'interface web du serveur GLPI
 
