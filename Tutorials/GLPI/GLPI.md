@@ -9,6 +9,7 @@ Pour installer le service GLPI, nous allons d'abord devoir installer quelques dÃ
 **Apache2**
 
 `apt install apache2Â `
+
 ---
 
 **PHP 8.2** (La version maximum compatible avec GLPI version 10.0.X)
