@@ -9,46 +9,45 @@ Pour installer le service GLPI, nous allons d'abord devoir installer quelques d�
 
 ## Installation des dépendances
 ### Apache2
-
-`apt install apache2 -y`
-
+```bash
+apt install apache2 -y
+```
 ### PHP
 Importation des certificats
-
-`apt install ca-certificates apt-transport-https software-properties-common wget curl lsb-release -y`
-
+```bash
+apt install ca-certificates apt-transport-https software-properties-common wget curl lsb-release -y
+```
 Importation de la clé et du référentiel GPG
-
-`curl -sSL https://packages.sury.org/php/README.txt | bash -x`
-
+```bash
+curl -sSL https://packages.sury.org/php/README.txt | bash -x
+```
 Installation de PHP
-
-`apt install php -y`
-
+```bash
+apt install php -y
+```
 Les modules PHP suivant sont aussi nécessaire au fonctionnement de glpi. Vous pouvez voir la liste des modules ici : https://glpi-install.readthedocs.io/en/latest/prerequisites.html#mandatory-extensions
-
-`apt install php-mysqli php-dom php-curl php-gd php-intl -y`
-
+```bash
+apt install php-mysqli php-dom php-curl php-gd php-intl -y
+```
 Certains modules auront déjà été installés avec PHP directement, vous pouvez voir la liste des modules installés avec : `php -m`
 
 redémarrez ensuite le serveur apache
-
-`systemctl restart apache2`
-
+```bash
+systemctl restart apache2
+```
 ### MariaDB
-
-`apt install mariadb-server -y`
-
+```bash
+apt install mariadb-server -y
+```
 Nous allons ensuite sécuriser la base de données avec
-
-`mysql_secure_installation`
-
+```bash
+mysql_secure_installation
+```
 Vous pouvez suivre les conseils lors de l'installation, par exemple :
-
-`You already have your root account protected, so you can safely answer 'n'.`
-
-`Switch to unix_socket authentication [Y/n]`
-
+```bash
+You already have your root account protected, so you can safely answer 'n'.
+Switch to unix_socket authentication [Y/n]
+```
 Vous pouvez mettre "n" si vous avez déjà un accès root protégé
 
 Par sécurité, désactivez l'accès root à distance ainsi que l'utilisateur anonyme et la base de donnée test.
@@ -63,51 +62,50 @@ Le server LAMP est prêt, pensez à faire un snapshot ou un clone si vous êtes 
 # Installation du serveur GLPI
 ## Création et paramétrage de la base de donnée
 Commencez par créer la base de donnée qui sera utilisée par GLPI. Sur votre shell du serveur :
-
-`mysql -u root -p`
-
+```bash
+mysql -u root -p
+```
 Le mot de passe demandé sera celui que vous avez entrés lors de la sécurisation.
 
 Créez ensuite la base de donnée
-
-`create database glpi_db;`
-
+```sql
+create database glpi_db;
+```
 Ensuite créez un utilisateur et augmentez les droits de l'utilisateur
-
-`create user 'glpi_user'@'localhost' identified by 'glpi_user_password';`
-
-`grant all privileges on glpi_db.* to 'glpi_user'@'localhost' with grant option;`
-
-`flush privileges;`
-
+```sql
+create user 'glpi_user'@'localhost' identified by 'glpi_user_password';
+grant all privileges on glpi_db.* to 'glpi_user'@'localhost' with grant option;
+flush privileges;
+```
 Cette dernière ligne vas mettre à jour les modifications apportées
 Enfin, quittez mysql avec `exit;`
 
 ## Installation du serveur GLPI
 ### Téléchargement et décompression de l'archive GLPI
 L'archive est disponible sur le github de glpi-project
-
-`wget https://github.com/glpi-project/glpi/releases/download/10.0.16/glpi-10.0.16.tgz`
-
+```bash
+wget https://github.com/glpi-project/glpi/releases/download/10.0.16/glpi-10.0.16.tgz
+```
 Décompressez l'archive
-
-`tar xvf glpi-10.0.16.tgz`
-
+```bash
+tar xvf glpi-10.0.16.tgz
+```
 (vous remarquerez alors le dossier « glpi » là où vous l'avez décompressé)
 
 Déplacez le dossier glpi dans "/var/www/html/glpi" dans l'arborescence du serveur web apache2
-
-`mv glpi /var/www/html/glpi`
+```bash
+mv glpi /var/www/html/glpi
+```
 ### Instalation de GLPI
 Commencez par donner à l'administrateur d'apache la propriété sur le dossier glpi
-
-`chown -R www-data:www-data /var/www/html/glpi/`
-
-`chmod -R 755 /var/www/html/glpi/`
-
+```bash
+chown -R www-data:www-data /var/www/html/glpi/
+chmod -R 755 /var/www/html/glpi/
+```
 Et redémarrez le serveur apache2
-
-`systemctl restart apache2`
+```bash
+systemctl restart apache2
+```
 ### Fin de l'installation et interface web de GLPI
 Pour accéder à l'interface web, entrez dans votre navigateur http://ip-du-serveur/glpi
 Choisissez la langue et cliquez sur "ok"
@@ -157,21 +155,24 @@ Si le serveur est configuré correctement, le bouton "server0" vous redirigera v
 
 ## Sur Linux
 Sur le client linux, téléchargez la dernière version de l'agent (ici 1.7)
-
-`wget https://github.com/glpi-project/glpi-agent/releases/download/1.7/glpi-agent-1.7-linux-installer.pl`
-
+```bash
+wget https://github.com/glpi-project/glpi-agent/releases/download/1.7/glpi-agent-1.7-linux-installer.pl
+```
 Puis lancez l'installation avec perl
-
-`perl glpi-agent-1.7-linux-installer.pl`
-
+```bash
+perl glpi-agent-1.7-linux-installer.pl
+```
 Lors de l'installation, le programme vous demande de renseigner l'adresse de votre server glpi (rajoutez bien "/glpi" à la fin de l'adresse)
 
 Vous n'avez pas à fournir de chemin vers l'inventaire local ou le tag s'il n'y en a pas.
 
 Puis redémarrez le service de l'agent
-
-`systemctl restart glpi-agent.service`
-
+```bash
+systemctl restart glpi-agent.service
+```
 Au besoin, vous pouvez éditer l'adresse dans le fichier de configuration se trouvant à `/etc/glpi-agent/conf.d/00-install.cfg`
 
-Pour forcer l'inventorisation vous pouvez lancer l'agent en tant que commande : `glpi-agent`
+Pour forcer l'inventorisation vous pouvez lancer l'agent en tant que commande :
+```bash
+glpi-agent
+```
