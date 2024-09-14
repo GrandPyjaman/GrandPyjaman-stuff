@@ -1,7 +1,24 @@
+# GLPI c'est quoi ?
+GLPI (Gestionnaire Libre de Parc Informatique) est un logiciel open source de gestion de services informatiques (ITSM) qui permet de gérer efficacement un parc informatique et de suivre les demandes d'assistance technique. Il permet plusieurs choses comme l'inventaire des équipements (que nous verrons ici aussi), la gestion des tickets d'incidents, des projets, des contrats et des licences, ainsi qu'une base de connaissances. GLPI est très utilisé en entreprises pour centraliser la gestion des actifs et le support technique.
+
+Il s'installe sur un serveur (ici une pile LAMP) et est accessible via son interface web.
+
 Cette procédure ce fait sur une VM Debian 12.5, pensez à adapter les commandes en fonction de la distribution que vous utilisez. Utilisez les droits sudo lorsque cela est nécéssaire.
 
 # Installation du serveur sur un LAMP
-Commencez par `apt update && sudo apt upgrade -y` pour s'assurer que la machine soit à jour.
+## Qu'est-ce qu'un LAMP ?
+
+Une pile LAMP est un ensemble de logiciels open source utilisés pour héberger des applications web. **LAMP** est l'acronyme de :
+
+- **L**inux : Le système d'exploitation (OS) sur lequel l'ensemble repose.
+- **A**pache : Le serveur web qui gère et sert les pages web.
+- **M**ySQL (ou MariaDB) : Le système de gestion de base de données utilisé pour stocker les informations de l'application.
+- **P**HP : Le langage de programmation côté serveur utilisé pour générer des pages web dynamiques.
+
+Ensemble, ces composants permettent d'héberger et d'exécuter des applications web comme GLPI, offrant ainsi un environnement stable et performant pour la gestion des services informatiques.
+
+Commencez par acceder à votre machine Debian et faites `apt update && sudo apt upgrade -y` pour s'assurer que la machine soit à jour.
+
 Pour installer le service GLPI, nous allons d'abord devoir installer quelques dépendances :
 - Apache2
 - PHP
@@ -30,6 +47,8 @@ Les modules PHP suivant sont aussi nécessaire au fonctionnement de glpi. Vous p
 apt install php-mysqli php-dom php-curl php-gd php-intl -y
 ```
 Certains modules auront déjà été installés avec PHP directement, vous pouvez voir la liste des modules installés avec : `php -m`
+
+Vous pouvez aussi installer d'autres modules optionnels en fonction de votre besoin comme le LDAP
 
 redémarrez ensuite le serveur apache
 ```bash
@@ -136,7 +155,7 @@ Une fois sur l'interface web, si vous souhaitez utiliser l'inventorisation, pens
 ## Sur Windows
 Télécharger la dernière version de l'agent à https://github.com/glpi-project/glpi-agent/releases
 Le fichier d'installation Windows est un .msi
-### Version graphique
+### En ersion graphique
 - Exécutez le fichier d'installation, suivez les étapes et acceptez la licence d'utilisation
 - Choisissez où installer l'agent
 - Choisissez le type d'installation (dans le cadre de cet exercice, nous nous contenterons d'utilisez l'installation typique, n'hésitez pas à choisie "complete" ou "custom" selon votre besoin)
@@ -152,6 +171,9 @@ Vous pourrez toujours changer la configuration de l'agent en relançant le fichi
 Accédez à l'interface web de l'agent en tapant `127.0.0.1:62354` dans un navigateur web. Vous devriez tomber sur cette page : ![Interface web de glpi-agent](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/gpli-agent_web_interface.png)
 Le bouton "Force an Inventory" forcera la remonter des informations de l'agent vers le server
 Si le serveur est configuré correctement, le bouton "server0" vous redirigera vers l'interface web du serveur GLPI
+
+### En ligne de commande
+()
 
 ## Sur Linux
 Sur le client linux, téléchargez la dernière version de l'agent (ici 1.7)
@@ -172,6 +194,8 @@ systemctl restart glpi-agent.service
 ```
 Au besoin, vous pouvez éditer l'adresse dans le fichier de configuration se trouvant à `/etc/glpi-agent/conf.d/00-install.cfg`
 
+# Gestion de l'inventaire
+()
 Pour forcer l'inventorisation vous pouvez lancer l'agent en tant que commande :
 ```bash
 glpi-agent
