@@ -152,6 +152,12 @@ Une fois sur l'interface web, si vous souhaitez utiliser l'inventorisation, pens
 - Tout en bas de la page, cliquez bien sur "sauvegarder"
 ![Activation de l'inventaire](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/GLPI/Pictures/Activation_inventaire_glpi.png)
 # Installation de l'agent GLPI
+L'agent GLPI vas permettre d'envoyer les informations du client sur lequel il est installé vers le serveur
+
+Vous pouvez le télécharger ici : https://github.com/glpi-project/glpi-agent/releases/
+
+Sa documentation est ici : https://glpi-agent.readthedocs.io/en/latest/index.html
+
 ## Sur Windows
 Télécharger la dernière version de l'agent à https://github.com/glpi-project/glpi-agent/releases
 Le fichier d'installation Windows est un .msi
@@ -173,7 +179,21 @@ Le bouton "Force an Inventory" forcera la remonter des informations de l'agent v
 Si le serveur est configuré correctement, le bouton "server0" vous redirigera vers l'interface web du serveur GLPI
 
 ### En ligne de commande
-()
+Pour lancer l'agent en ligne de commande, il faut bien utiliser l'invite de commande windows et non pas Powershell.
+
+La commande utilise msiexec avec quelques arguments :
+```command
+msiexec /i "chemin vers le .msi" /quiet EXECMODE=1 RUNNOW=1 ADD_FIREWALL_EXCEPTION=1 SERVER="http://adresse_de_votre_server/glpi"
+```
+- **msiexec** est l'utilitaire  d'installation des fichiers .msi
+- **/i** permet de dire qu'il s'agit d'une installation, suivie du chemin vers le fichier
+- **/quiet** lance l'installation en mode silencieux
+- **EXECMODE=1** permet de faire fonctionner l'agent en tant que service
+- **RUNNOW=1** éxecute l'agent immédiatement après l'installation
+- **ADD_FIREWALL_EXCEPTION=1** Ajoute une exception au pare feu pour l'agent GLPI
+- **SERVER="http://adresse_de_votre_server/glpi"** précise à l'agent d'adresse de votre serveur pour qu'il fasse remonter les informations
+
+Toutes les précisions sont ici : https://glpi-agent.readthedocs.io/en/latest/installation/windows-command-line.html#command-line-parameters
 
 ## Sur Linux
 Sur le client linux, téléchargez la dernière version de l'agent (ici 1.7)
