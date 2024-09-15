@@ -19,7 +19,7 @@ Ensemble, ces composants permettent d'héberger et d'exécuter des applications 
 
 Commencez par acceder à votre machine Debian et faites `apt update && sudo apt upgrade -y` pour s'assurer que la machine soit à jour.
 
-Pour installer le service GLPI, nous allons d'abord devoir installer quelques dépendances :
+Pour installer le service GLPI, nous allons donc devoir installer quelques dépendances :
 - Apache2
 - PHP
 - MariaDB pour mysql
@@ -194,9 +194,9 @@ systemctl restart glpi-agent.service
 ```
 Au besoin, vous pouvez éditer l'adresse dans le fichier de configuration se trouvant à `/etc/glpi-agent/conf.d/00-install.cfg`
 
-# Gestion de l'inventaire
-()
 Pour forcer l'inventorisation vous pouvez lancer l'agent en tant que commande :
 ```bash
 glpi-agent
 ```
+# Gestion de l'inventaire
+()
