@@ -154,8 +154,6 @@ Une fois sur l'interface web, si vous souhaitez utiliser l'inventorisation, pens
 # Installation de l'agent GLPI
 L'agent GLPI vas permettre d'envoyer les informations du client sur lequel il est installé vers le serveur
 
-Vous pouvez le télécharger ici : https://github.com/glpi-project/glpi-agent/releases/
-
 Sa documentation est ici : https://glpi-agent.readthedocs.io/en/latest/index.html
 
 ## Sur Windows
