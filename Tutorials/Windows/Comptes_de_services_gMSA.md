@@ -28,13 +28,13 @@ New-ADServiceAccount -Name "gMSA_test" `
                      -KerberosEncryptionType AES128, AES256 `
                      -Enabled $True
 ```
-**Name** : le nom qu'aura le compte de service, soyez concis et faite le commencer par gMSA_ pour qu'il soit identifiable au premier coup d'œil
-**Descriptiion** : la description que le compte aura
-**DNSHostName** : le nom dns qu'aura le compte, rajoutez simplement .domain.lan au nom du compte
-**ManagedPasswordIntervalInDays** : le mot de passe sera changé automatiquement tout les X jours, X étant le chiffre que vous avez renseignés.
-**PrincipalsAllowedToRetrieveManagedPassword** : Les principaux AD qui peuvent récupérer le mot de passe et donc utiliser le compte de service. Il faut mettre ici le nom des serveurs qui utiliseront le compte. C'est IMPORTANT car sinon, le serveur ne pourra pas utiliser le compte comme sur des tâches planifiées ou des services. Si vous avez une erreur de droit, cela viens probablement de ce paramètre. Vous pouvez le changer après (voir en dessous). AUSSI le $ après le nom est important. Vous pouvez en mettre plusieurs, par exemple "ACTIVEDIRECTORY01$","TOOLSERVER02$"
-**KerberosEncryptionType** : Le type d'encryptions utilisé pour les tickets Kerberos, il faut bien préciser AES128 et AES256 que nous utilisons, sinon il risquent d'utiliser d'autre type et provoque des erreurs
-**Enabled** : Pour activer le compte
+- **Name** : le nom qu'aura le compte de service, soyez concis et faite le commencer par gMSA_ pour qu'il soit identifiable au premier coup d'œil
+- **Descriptiion** : la description que le compte aura
+- **DNSHostName** : le nom dns qu'aura le compte, rajoutez simplement .domain.lan au nom du compte
+- **ManagedPasswordIntervalInDays** : le mot de passe sera changé automatiquement tout les X jours, X étant le chiffre que vous avez renseignés.
+- **PrincipalsAllowedToRetrieveManagedPassword** : Les principaux AD qui peuvent récupérer le mot de passe et donc utiliser le compte de service. Il faut mettre ici le nom des serveurs qui utiliseront le compte. C'est IMPORTANT car sinon, le serveur ne pourra pas utiliser le compte comme sur des tâches planifiées ou des services. Si vous avez une erreur de droit, cela viens probablement de ce paramètre. Vous pouvez le changer après (voir en dessous). AUSSI le $ après le nom est important. Vous pouvez en mettre plusieurs, par exemple "ACTIVEDIRECTORY01$","TOOLSERVER02$"
+- **KerberosEncryptionType** : Le type d'encryptions utilisé pour les tickets Kerberos, il faut bien préciser AES128 et AES256 que nous utilisons, sinon il risquent d'utiliser d'autre type et provoque des erreurs
+- **Enabled** : Pour activer le compte
 
 La liste des arguments et leur fonction est disponible ici : [New-ADServiceAccount (ActiveDirectory) | Microsoft Learn](https://learn.microsoft.com/en-us/powershell/module/activedirectory/new-adserviceaccount)
 
