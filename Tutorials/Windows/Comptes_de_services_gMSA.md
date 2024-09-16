@@ -57,7 +57,7 @@ Install-ADServiceAccount "gMSA_test"
 Pour l'utiliser dans un service ou une tâche planifiée, il faudra permettre à l'Active Directory de le voir lors de la sélection de compte en changeant quelques paramètres :
 
 Dans cette fenêtre de gauche, cliquez sur **Types d'objets...** et désélectionnez tout sauf **des comptes de service**
-![Types d'objets et comptes de service]()
+![Types d'objets et comptes de service](https://github.com/GrandPyjaman/GrandPyjaman-stuff/blob/main/Tutorials/Windows/Screenshots/types_objet.png)
 
 S'il n'est toujours pas détecté, cliquez sur **Emplacement...** et sélectionnez l'Unité d'Organisation dans lequel est le compte (normalement **Managed Service Account**) et refaite la recherche
 
