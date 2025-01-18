@@ -17,7 +17,7 @@ Une pile LAMP est un ensemble de logiciels open source utilisés pour héberger 
 
 Ensemble, ces composants permettent d'héberger et d'exécuter des applications web comme GLPI, offrant ainsi un environnement stable et performant pour la gestion des services informatiques.
 
-Commencez par acceder à votre machine Debian et faites `apt update && sudo apt upgrade -y` pour s'assurer que la machine soit à jour.
+Commencez par acceder à votre machine Debian et faites `apt update && apt upgrade -y` pour s'assurer que la machine soit à jour.
 
 Pour installer le service GLPI, nous allons donc devoir installer quelques dépendances :
 - Apache2
@@ -44,7 +44,7 @@ apt install php -y
 ```
 Les modules PHP suivant sont aussi nécessaire au fonctionnement de glpi. Vous pouvez voir la liste des modules ici : https://glpi-install.readthedocs.io/en/latest/prerequisites.html#mandatory-extensions
 ```bash
-apt install php-mysqli php-dom php-curl php-gd php-intl -y
+apt install php-xml php-mysql php-curl php-gd php-intl -y
 ```
 Certains modules auront déjà été installés avec PHP directement, vous pouvez voir la liste des modules installés avec : `php -m`
 
@@ -60,8 +60,7 @@ apt install mariadb-server -y
 ```
 Nous allons ensuite sécuriser la base de données avec
 ```bash
-mysql_secure_installation
-```
+s```
 Vous pouvez suivre les conseils lors de l'installation, par exemple :
 ```bash
 You already have your root account protected, so you can safely answer 'n'.
