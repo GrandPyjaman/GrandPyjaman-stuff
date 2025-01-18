@@ -60,7 +60,8 @@ apt install mariadb-server -y
 ```
 Nous allons ensuite sécuriser la base de données avec
 ```bash
-s```
+mysql_secure_installation
+```
 Vous pouvez suivre les conseils lors de l'installation, par exemple :
 ```bash
 You already have your root account protected, so you can safely answer 'n'.
