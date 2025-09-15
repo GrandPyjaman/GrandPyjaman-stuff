@@ -1,4 +1,4 @@
-A venir : compplétion, plus d'exemples et des schémas
+A venir : complétion, plus d'exemples et des schémas
 
 Il y à quelques mois maintenant, j'ai hérité de l'hébergement OVH que mon grand-père utilisait pour maintenir un site de promotion de son chalet à la montagne.
 Le site sentant bon l'amateurisme en webdesign des années 2000, il est devenu complètement obsolète par manque d'entretien et l'arrivée d'airBNB.
