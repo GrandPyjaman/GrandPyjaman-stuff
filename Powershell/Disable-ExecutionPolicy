@@ -1,3 +1,4 @@
+# To run in powershell
 # Create a function to disable Windows script execution policy so you can run unsigned scripts in your shell
 
 function Disable-ExecutionPolicy {($ctx = $executioncontext.gettype().getfield("_context","nonpublic,instance").getvalue( $executioncontext)).gettype().getfield("_authorizationManager","nonpublic,instance").setvalue($ctx, (new-object System.Management.Automation.AuthorizationManager "Microsoft.PowerShell"))}
